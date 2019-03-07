@@ -31,7 +31,7 @@ async function main() {
         console.info(`${new Date().toISOString()} - Polling site`)
         let result = await pool();
         if (result.changed) {
-            opn(result.url)
+            await opn(result.url)
             console.info(`${new Date().toISOString()} - Opening new content and exiting!`)
             process.exit(0);
         }
